@@ -1,0 +1,35 @@
+.loginContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    height: 100%;
+}
+
+.loginButtonContainer {
+    text-align: center;
+}
+
+.loginButton {
+    width: 160px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.loginLogoDisplay {
+    height: 100px;
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.loginLogoTitle {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    color: var(--ion-color-primary);
+}
+
+.registerButtonContainer {
+    text-align: center;
+    font-size: 90%;
+}

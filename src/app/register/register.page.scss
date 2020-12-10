@@ -1,0 +1,28 @@
+.registerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    height: 100%;
+}
+
+.registerButtonContainer {
+    text-align: center;
+}
+
+.registerButton {
+    width: 160px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.registerPageTitle {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.registerButtonContainer {
+    text-align: center;
+    font-size: 90%;
+}

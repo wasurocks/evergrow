@@ -1,0 +1,25 @@
+<ion-content fullscreen color='light'>
+  <div class='loginContainer'>
+    <img src='assets/transparentLogo.png' class='loginLogoDisplay' />
+    <div class='loginLogoTitle'>Evergrow</div>
+    <div>
+      <ion-item>
+        <ion-input placeholder="Email" type="email"></ion-input>
+      </ion-item>
+      <br />
+      <ion-item>
+        <ion-input placeholder="Password" type="password"></ion-input>
+      </ion-item>
+      <br />
+      <div class="loginButtonContainer">
+        <ion-button (click)="handleLogin()" color="primary" class="loginButton">Login</ion-button>
+      </div>
+      <div class="registerButtonContainer">
+        <span>Don't have an account?</span>
+        <br />
+        <span>Press to <span style="font-weight: 500; color: var(--ion-color-primary)"
+            (click)="handleOpenRegisterPage()">Register</span></span>
+      </div>
+    </div>
+  </div>
+</ion-content>
