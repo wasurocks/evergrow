@@ -1,9 +1,20 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>budget</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Set your budget
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content [fullscreen]='true'>
+  <div class='contentContainer'>
+    <div class='mainBudgetContainer'>
+      <ion-input clearInput value="9,000" class='inputStyle'></ion-input>
+      <span>THB</span>
+    </div>
+    <div>Press to change</div>
+  </div>
 </ion-content>

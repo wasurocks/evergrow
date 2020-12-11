@@ -6,10 +6,14 @@
       </ion-toolbar>
     </ion-header>
     <ion-content>
-      <ion-list *ngFor="let pages of navigate">
+      <ion-list *ngFor="let pages of navigate; let i = index">
         <ion-menu-toggle auto-hide="true">
-          <ion-item [routerLink]="pages.url" routerDirection="forward">
-            <ion-icon [name]="pages.icon" slot="start"></ion-icon>
+          <ion-item [routerLink]="pages.url" routerDirection="forward" *ngIf="i < 3">
+            <ion-icon [name]="pages.icon" slot="start" style='color: var(--ion-color-primary);'></ion-icon>
+            {{pages.title}}
+          </ion-item>
+          <ion-item (click)="handleLogout()" *ngIf="i == 3">
+            <ion-icon [name]="pages.icon" slot="end" style='color: var(--ion-color-primary);'></ion-icon>
             {{pages.title}}
           </ion-item>
         </ion-menu-toggle>
