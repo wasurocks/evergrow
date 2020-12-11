@@ -1,11 +1,13 @@
 import { NgModule } from "@angular/core";
 import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
+import { AuthGuard } from "src/helpers/auth.guard";
 
 const routes: Routes = [
     {
         path: "home",
         loadChildren: () =>
-            import("./home/home.module").then((m) => m.HomePageModule),
+            import("../pages/home/home.module").then((m) => m.HomePageModule),
+        canActivate: [AuthGuard],
     },
     {
         path: "",
@@ -15,24 +17,39 @@ const routes: Routes = [
     {
         path: "login",
         loadChildren: () =>
-            import("./login/login.module").then((m) => m.LoginPageModule),
+            import("../pages/login/login.module").then(
+                (m) => m.LoginPageModule
+            ),
     },
-  {
-    path: 'register',
-    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
-  },
-  {
-    path: 'analysis',
-    loadChildren: () => import('./analysis/analysis.module').then( m => m.AnalysisPageModule)
-  },
-  {
-    path: 'budget',
-    loadChildren: () => import('./budget/budget.module').then( m => m.BudgetPageModule)
-  },
-  {
-    path: 'add',
-    loadChildren: () => import('./add/add.module').then( m => m.AddPageModule)
-  },
+    {
+        path: "register",
+        loadChildren: () =>
+            import("../pages/register/register.module").then(
+                (m) => m.RegisterPageModule
+            ),
+    },
+    {
+        path: "analysis",
+        loadChildren: () =>
+            import("../pages/analysis/analysis.module").then(
+                (m) => m.AnalysisPageModule
+            ),
+        canActivate: [AuthGuard],
+    },
+    {
+        path: "budget",
+        loadChildren: () =>
+            import("../pages/budget/budget.module").then(
+                (m) => m.BudgetPageModule
+            ),
+        canActivate: [AuthGuard],
+    },
+    {
+        path: "add",
+        loadChildren: () =>
+            import("../pages/add/add.module").then((m) => m.AddPageModule),
+        canActivate: [AuthGuard],
+    },
 ];
 
 @NgModule({

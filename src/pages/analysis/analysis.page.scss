@@ -45,16 +45,17 @@
         width: 120px;
         display: flex;
         justify-content: center;
+        flex-flow: column;
         align-items: center;
         margin-top: 10px;
 
         & > *:first-child {
-            font-size: 140%;
+            font-size: 24px;
         }
 
         & > *:last-child {
-            margin-top: 8px;
-            font-size: 60%;
+            margin-top: 6px;
+            font-size: 80%;
         }
     }
 }

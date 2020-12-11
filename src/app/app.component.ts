@@ -4,6 +4,8 @@ import { Platform } from "@ionic/angular";
 import { SplashScreen } from "@ionic-native/splash-screen/ngx";
 import { StatusBar } from "@ionic-native/status-bar/ngx";
 import { Router } from "@angular/router";
+import { User } from "src/models/user";
+import { AccountService } from "src/services/account.service";
 
 @Component({
     selector: "app-root",
@@ -11,15 +13,18 @@ import { Router } from "@angular/router";
     styleUrls: ["app.component.scss"],
 })
 export class AppComponent {
+    user: User;
     navigate: any;
     constructor(
         private router: Router,
         private platform: Platform,
         private splashScreen: SplashScreen,
-        private statusBar: StatusBar
+        private statusBar: StatusBar,
+        private accountService: AccountService
     ) {
         this.sideMenu();
         this.initializeApp();
+        this.accountService.user.subscribe((x) => (this.user = x));
     }
 
     initializeApp() {
@@ -54,6 +59,7 @@ export class AppComponent {
     }
 
     handleLogout() {
+        this.accountService.logout();
         this.router.navigate(["/login"]);
     }
 }

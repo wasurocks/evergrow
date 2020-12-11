@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Overview
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)='getData()' style='margin-bottom: 10px;' color='medium'>
+      <ion-icon name="refresh"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button (click)='handleOpenAddPage()'>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <div class='contentContainer'>
+    <div class='mainBudgetContainer'>
+      <div>
+        <span style='color: var(--ion-color-primary)'>{{ budget }}</span>
+        <span style='color: var(--ion-color-primary-tint)'>THB</span>
+      </div>
+      <div>Monthly budget remaining</div>
+    </div>
+
+    <div class='cardContainer'>
+      <div class='card' *ngFor="let entry of entries">
+        <div>
+          <div>{{ entry.event }}</div>
+          <div>{{ entry.detail }}</div>
+        </div>
+        <div style='font-weight: 500;'
+          [ngStyle]="{'color':entry.amount < 0 ? 'var(--ion-color-danger)' : 'var(--ion-color-success)' }">
+          {{ entry.amount }}
+        </div>
+        <ion-icon name='trash' style='position: absolute; right: 20px; bottom: 20px;' color='medium'
+          (click)='handleDelete(entry._id)'></ion-icon>
+      </div>
+    </div>
+  </div>
+</ion-content>

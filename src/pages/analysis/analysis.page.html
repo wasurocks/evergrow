@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Trends
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class='contentContainer'>
+    <div class='cardContainer'>
+      <div class='card'>
+        <div>Monthly Budget Deviation</div>
+        <div>
+          <span>{{ budgetDeviation }}</span>
+          <span *ngIf="checkBadDeviation()">Bad</span>
+          <span *ngIf="!checkBadDeviation()">Good</span>
+        </div>
+      </div>
+      <div class='card'>
+        <div>Average Daily Spending</div>
+        <div>
+          <span>{{ avgDailySpending }}</span>
+          <span>THB</span>
+        </div>
+      </div>
+      <div class='card'>
+        <div>Max Daily Spending</div>
+        <div>
+          <span>{{ maxDailySpending }}</span>
+          <span>THB</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

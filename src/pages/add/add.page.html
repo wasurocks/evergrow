@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button [icon]="'close-outline'" defaultHref="home">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      New Expense
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <div class='contentContainer'>
+    <div class='cardContainer'>
+      <form class='card' [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div
+          style='background: rgb(255, 255, 183); width: 50px; height: 50px; border-radius: 50px; position: relative; top: -25px;'>
+        </div>
+
+        <ion-item>
+          <ion-label position="stacked">Event Name</ion-label>
+          <ion-input formControlName='event'></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Amount</ion-label>
+          <ion-input type='number' formControlName='amount'></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Detail</ion-label>
+          <ion-input formControlName='detail'></ion-input>
+        </ion-item>
+        <ion-item style='margin-top: 15px;'>
+          <ion-select placeholder="Select Type" formControlName="itemType">
+            <ion-select-option value="spending">Spending</ion-select-option>
+            <ion-select-option value="saving">Saving</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item style='max-width: 80%; font-size: 60%; margin-top: 15px;'>
+          <ion-label>Select date</ion-label>
+          <ion-datetime displayFormat="D MMM YYYY H:mm" min="1997" max="2010" value="2005-06-17T11:06Z"
+            formControlName="createdAt"></ion-datetime>
+        </ion-item>
+        <ion-button type='submit' color="primary" style='margin-top: 20px; width: 100px; font-weight: 600;'>Add
+        </ion-button>
+      </form>
+    </div>
+  </div>
+</ion-content>

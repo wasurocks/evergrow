@@ -10,11 +10,11 @@
 </ion-header>
 
 <ion-content [fullscreen]='true'>
-  <div class='contentContainer'>
+  <form class='contentContainer' [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class='mainBudgetContainer'>
-      <ion-input clearInput value="9,000" class='inputStyle'></ion-input>
+      <ion-input value="" class='inputStyle' formControlName='budget'></ion-input>
       <span>THB</span>
     </div>
-    <div>Press to change</div>
-  </div>
+    <ion-button color='light' type='submit'>Press to change</ion-button>
+  </form>
 </ion-content>
